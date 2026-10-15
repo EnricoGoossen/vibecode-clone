@@ -1,4 +1,4 @@
-// Vibecode Code Generator Engine
+// NovaCode Code Generator Engine
 // Generates fully functional HTML/CSS/JS apps from natural language prompts
 
 export interface GeneratedApp {
@@ -186,14 +186,14 @@ body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif
 `;
 
   const js = `
-let tasks = JSON.parse(localStorage.getItem('vibecode_tasks') || '[]');
+let tasks = JSON.parse(localStorage.getItem('novacode_tasks') || '[]');
 let filter = 'all';
 const list = document.getElementById('task-list');
 const input = document.getElementById('task-input');
 const empty = document.getElementById('empty-state');
 const countEl = document.getElementById('task-count');
 
-function save() { localStorage.setItem('vibecode_tasks', JSON.stringify(tasks)); }
+function save() { localStorage.setItem('novacode_tasks', JSON.stringify(tasks)); }
 function render() {
   const filtered = tasks.filter(t => filter==='all' ? true : filter==='active' ? !t.done : t.done);
   list.innerHTML = filtered.map(t => \`
@@ -467,7 +467,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 `;
 
   const js = `
-let notes=JSON.parse(localStorage.getItem('vibecode_notes')||'[]');
+let notes=JSON.parse(localStorage.getItem('novacode_notes')||'[]');
 let activeId=null;
 const list=document.getElementById('notes-list');
 const titleEl=document.getElementById('note-title');
@@ -475,7 +475,7 @@ const bodyEl=document.getElementById('note-body');
 const dateEl=document.getElementById('note-date');
 const searchEl=document.getElementById('note-search');
 
-function save(){localStorage.setItem('vibecode_notes',JSON.stringify(notes));}
+function save(){localStorage.setItem('novacode_notes',JSON.stringify(notes));}
 function renderList(){
   const q=searchEl.value.toLowerCase();
   const filtered=notes.filter(n=>!q||n.title.toLowerCase().includes(q)||n.body.toLowerCase().includes(q));
@@ -966,7 +966,7 @@ function generateChat(ctx: AppContext): GeneratedApp {
   <header class="chat-header">
     <div class="chat-avatar">🤖</div>
     <div>
-      <div class="chat-name">Vibecode Assistant</div>
+      <div class="chat-name">NovaCode Assistant</div>
       <div class="chat-status">● Online</div>
     </div>
   </header>
@@ -1452,7 +1452,7 @@ function generateBlog(ctx: AppContext): GeneratedApp {
   const html = `
 <div class="blog-app">
   <header class="blog-header">
-    <h1 class="blog-title">The Vibecode Blog</h1>
+    <h1 class="blog-title">The NovaCode Blog</h1>
     <p class="blog-subtitle">Thoughts on tech, design & life</p>
   </header>
   <div class="blog-featured" id="blog-featured"></div>
@@ -1638,7 +1638,7 @@ function generateLanding(ctx: AppContext): GeneratedApp {
   const html = `
 <div class="land-app">
   <nav class="land-nav">
-    <div class="land-logo">⚡ Vibecode</div>
+    <div class="land-logo">⚡ NovaCode</div>
     <div class="land-nav-links">
       <a href="#features">Features</a>
       <a href="#testimonials">Reviews</a>
@@ -1675,20 +1675,20 @@ function generateLanding(ctx: AppContext): GeneratedApp {
   <section class="land-section" id="testimonials">
     <h2 class="land-section-title">Loved by builders</h2>
     <div class="land-testimonials">
-      <div class="testi-card"><p>"I built my entire MVP in an afternoon. Vibecode is a game-changer for indie hackers."</p><div class="testi-author"><span class="testi-avatar" style="background:linear-gradient(135deg,#6366f1,#ec4899)">S</span><div><strong>Sarah K.</strong><span>Indie Hacker</span></div></div></div>
+      <div class="testi-card"><p>"I built my entire MVP in an afternoon. NovaCode is a game-changer for indie hackers."</p><div class="testi-author"><span class="testi-avatar" style="background:linear-gradient(135deg,#6366f1,#ec4899)">S</span><div><strong>Sarah K.</strong><span>Indie Hacker</span></div></div></div>
       <div class="testi-card"><p>"The quality of generated code is surprisingly good. I've shipped 3 client projects with it."</p><div class="testi-author"><span class="testi-avatar" style="background:linear-gradient(135deg,#10b981,#0ea5e9)">M</span><div><strong>Marco V.</strong><span>Freelance Dev</span></div></div></div>
       <div class="testi-card"><p>"As a non-technical founder, this is the first tool that actually lets me build what I imagine."</p><div class="testi-author"><span class="testi-avatar" style="background:linear-gradient(135deg,#f97316,#eab308)">A</span><div><strong>Anna L.</strong><span>Startup Founder</span></div></div></div>
     </div>
   </section>
   <section class="land-cta" id="cta">
     <h2>Ready to build something amazing?</h2>
-    <p>Join 12,000+ builders creating apps with Vibecode.</p>
+    <p>Join 12,000+ builders creating apps with NovaCode.</p>
     <button class="btn-primary-lg">Start Free — No Credit Card</button>
   </section>
   <footer class="land-footer">
-    <div>⚡ Vibecode</div>
+    <div>⚡ NovaCode</div>
     <div class="land-footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
-    <div>© 2025 Vibecode. All rights reserved.</div>
+    <div>© 2025 NovaCode. All rights reserved.</div>
   </footer>
 </div>`;
 
@@ -1936,12 +1936,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 `;
 
   const js = `
-let txs=JSON.parse(localStorage.getItem('vibecode_budget')||'[]');
+let txs=JSON.parse(localStorage.getItem('novacode_budget')||'[]');
 const list=document.getElementById('budget-list');
 const catIcons={food:'🍕',transport:'🚗',housing:'🏠',entertainment:'🎬',salary:'💼',other:'📦'};
 const catNames={food:'Food',transport:'Transport',housing:'Housing',entertainment:'Fun',salary:'Salary',other:'Other'};
 
-function save(){localStorage.setItem('vibecode_budget',JSON.stringify(txs));}
+function save(){localStorage.setItem('novacode_budget',JSON.stringify(txs));}
 function render(){
   const income=txs.filter(t=>t.type==='in').reduce((s,t)=>s+t.amount,0);
   const expense=txs.filter(t=>t.type==='out').reduce((s,t)=>s+t.amount,0);
@@ -2032,7 +2032,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 `;
 
   const js = `
-let habits=JSON.parse(localStorage.getItem('vibecode_habits')||'[]');
+let habits=JSON.parse(localStorage.getItem('novacode_habits')||'[]');
 const list=document.getElementById('habit-list');
 const weekDays=document.getElementById('habit-week-days');
 const today=new Date();
@@ -2083,7 +2083,7 @@ function render(){
     });
   });
 }
-function save(){localStorage.setItem('vibecode_habits',JSON.stringify(habits));}
+function save(){localStorage.setItem('novacode_habits',JSON.stringify(habits));}
 document.getElementById('habit-add').addEventListener('click',addHabit);
 document.getElementById('habit-input').addEventListener('keydown',e=>{if(e.key==='Enter')addHabit();});
 function addHabit(){
@@ -2259,10 +2259,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 `;
 
   const js = `
-let board=JSON.parse(localStorage.getItem('vibecode_kanban')||'{"todo":[],"progress":[],"done":[]}');
+let board=JSON.parse(localStorage.getItem('novacode_kanban')||'{"todo":[],"progress":[],"done":[]}');
 const cols=['todo','progress','done'];
 
-function save(){localStorage.setItem('vibecode_kanban',JSON.stringify(board));}
+function save(){localStorage.setItem('novacode_kanban',JSON.stringify(board));}
 function render(){
   cols.forEach(col=>{
     const el=document.getElementById('cards-'+col);
@@ -2376,7 +2376,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 const results=document.getElementById('gen-results');
 const btn=document.getElementById('gen-btn');
 const input=document.getElementById('gen-input');
-const cards=JSON.parse(localStorage.getItem('vibecode_generic')||'[]');
+const cards=JSON.parse(localStorage.getItem('novacode_generic')||'[]');
 
 function renderCards(){
   if(!cards.length){
@@ -2398,7 +2398,7 @@ function generate(){
   const time=now.toLocaleDateString()+' '+now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   cards.unshift({title,text,time});
   if(cards.length>20)cards.pop();
-  localStorage.setItem('vibecode_generic',JSON.stringify(cards));
+  localStorage.setItem('novacode_generic',JSON.stringify(cards));
   input.value='';
   renderCards();
 }

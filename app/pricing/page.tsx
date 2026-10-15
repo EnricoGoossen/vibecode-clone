@@ -65,7 +65,7 @@ export default function PricingPage() {
           Wholesale AI pricing. No hidden fees.
         </h1>
         <p className="text-[#a3a3a3] max-w-xl mx-auto text-[15px] leading-relaxed">
-          $1 in credits on Vibecode = $1 in AI usage on Anthropic, OpenAI, etc. We charge exactly
+          $1 in credits on NovaCode = $1 in AI usage on Anthropic, OpenAI, etc. We charge exactly
           what we pay. Credits roll over each billing cycle while your plan is active.
         </p>
       </section>

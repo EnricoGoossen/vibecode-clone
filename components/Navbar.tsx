@@ -28,7 +28,7 @@ export default function Navbar() {
           <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#6c5ce7] to-[#a855f7] flex items-center justify-center glow-accent-subtle">
             <Sparkles className="w-4 h-4 text-white" />
           </span>
-          <span className="text-[#f0f0f5]">Vibecode</span>
+          <span className="text-[#f0f0f5]">NovaCode</span>
         </Link>
 
         {/* Desktop links */}

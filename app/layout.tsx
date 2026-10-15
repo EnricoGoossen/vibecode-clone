@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Vibecode - AI Mobile & Web App Builder",
+  title: "NovaCode - AI Mobile & Web App Builder",
   description: "Build mobile and web apps with AI. Describe your idea, get a working app, and publish it without starting from scratch.",
 };
 

@@ -8,9 +8,9 @@ const sections = [
     icon: BookOpen,
     title: "Getting started",
     items: [
-      { label: "Introduction", desc: "What Vibecode is and how it works" },
+      { label: "Introduction", desc: "What NovaCode is and how it works" },
       { label: "Quick start", desc: "Build your first app in 5 minutes" },
-      { label: "Project structure", desc: "How Vibecode organizes your code" },
+      { label: "Project structure", desc: "How NovaCode organizes your code" },
       { label: "Prompting guide", desc: "Tips for getting the best results" },
     ],
   },
@@ -28,9 +28,9 @@ const sections = [
     icon: Terminal,
     title: "CLI",
     items: [
-      { label: "Installation", desc: "Install the Vibecode CLI" },
+      { label: "Installation", desc: "Install the NovaCode CLI" },
       { label: "Commands", desc: "Reference for all CLI commands" },
-      { label: "Automation", desc: "Use Vibecode in CI/CD pipelines" },
+      { label: "Automation", desc: "Use NovaCode in CI/CD pipelines" },
     ],
   },
   {
@@ -55,7 +55,7 @@ const sections = [
     icon: Shield,
     title: "Security",
     items: [
-      { label: "Code ownership", desc: "You own all code Vibecode generates" },
+      { label: "Code ownership", desc: "You own all code NovaCode generates" },
       { label: "Data privacy", desc: "How your data is handled" },
       { label: "Compliance", desc: "GDPR and other compliance notes" },
     ],
@@ -70,7 +70,7 @@ export default function DocsPage() {
       <section className="px-6 pt-16 pb-8 max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Docs</h1>
         <p className="text-[#a3a3a3]">
-          Everything you need to build, ship, and manage apps with Vibecode.
+          Everything you need to build, ship, and manage apps with NovaCode.
         </p>
       </section>
 

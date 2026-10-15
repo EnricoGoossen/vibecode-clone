@@ -5,31 +5,31 @@ import { useState } from "react";
 
 const commands = [
   {
-    cmd: "npm install -g vibecode-cli",
-    desc: "Install the Vibecode CLI globally",
+    cmd: "npm install -g novacode-cli",
+    desc: "Install the NovaCode CLI globally",
   },
   {
-    cmd: "vibecode init my-app",
+    cmd: "novacode init my-app",
     desc: "Create a new project",
   },
   {
-    cmd: "vibecode build",
+    cmd: "novacode build",
     desc: "Build the current project",
   },
   {
-    cmd: "vibecode deploy --target appstore",
+    cmd: "novacode deploy --target appstore",
     desc: "Deploy to the App Store",
   },
   {
-    cmd: "vibecode deploy --target web",
+    cmd: "novacode deploy --target web",
     desc: "Deploy as a web app",
   },
   {
-    cmd: "vibecode logs",
+    cmd: "novacode logs",
     desc: "View build and runtime logs",
   },
   {
-    cmd: "vibecode credits",
+    cmd: "novacode credits",
     desc: "Check your remaining credits",
   },
 ];
@@ -53,7 +53,7 @@ export default function CliPage() {
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">CLI</h1>
         </div>
         <p className="text-[#a3a3a3]">
-          Build, manage, and deploy your Vibecode projects from the terminal.
+          Build, manage, and deploy your NovaCode projects from the terminal.
         </p>
       </section>
 
@@ -65,7 +65,7 @@ export default function CliPage() {
               <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
               <div className="w-3 h-3 rounded-full bg-[#28c840]" />
             </div>
-            <span className="text-[12px] text-[#555] ml-2">vibecode-cli</span>
+            <span className="text-[12px] text-[#555] ml-2">novacode-cli</span>
           </div>
           <div className="p-5 space-y-4">
             {commands.map((c) => (
@@ -98,7 +98,7 @@ export default function CliPage() {
         <ul className="space-y-2">
           {[
             "Node.js 18 or later",
-            "A Vibecode account (free or paid)",
+            "A NovaCode account (free or paid)",
             "Apple Developer account for App Store deployment ($99/year)",
           ].map((req) => (
             <li key={req} className="flex items-center gap-2 text-[14px] text-[#a3a3a3]">

@@ -34,14 +34,14 @@ const posts = [
   },
   {
     title: "Publishing to the App Store without a Mac",
-    excerpt: "How Vibecode builds, signs, and uploads your iOS app to the App Store — no Xcode required.",
+    excerpt: "How NovaCode builds, signs, and uploads your iOS app to the App Store — no Xcode required.",
     date: "Aug 2026",
     tag: "Tutorial",
     theme: "from-slate-400 to-blue-500",
   },
   {
     title: "From prompt to production: a case study",
-    excerpt: "How a solo founder went from an idea to a live SaaS product in 3 weeks using Vibecode.",
+    excerpt: "How a solo founder went from an idea to a live SaaS product in 3 weeks using NovaCode.",
     date: "Jul 2026",
     tag: "Case study",
     theme: "from-amber-400 to-orange-500",
@@ -54,7 +54,7 @@ export default function BlogPage() {
       <section className="px-6 pt-16 pb-8 max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Blog</h1>
         <p className="text-[#a3a3a3]">
-          Guides, comparisons, and stories from the Vibecode community.
+          Guides, comparisons, and stories from the NovaCode community.
         </p>
       </section>
 

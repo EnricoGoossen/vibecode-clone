@@ -12,12 +12,12 @@ const testimonials = [
   {
     name: "Sarah K.",
     role: "Indie developer",
-    text: "I went from zero code to a live iOS app in a weekend. Vibecode is the closest thing to magic I've seen in dev tools.",
+    text: "I went from zero code to a live iOS app in a weekend. NovaCode is the closest thing to magic I've seen in dev tools.",
   },
   {
     name: "Marcus T.",
     role: "Product manager",
-    text: "Our team prototypes features in Vibecode before committing to a build. It's changed how we validate ideas.",
+    text: "Our team prototypes features in NovaCode before committing to a build. It's changed how we validate ideas.",
   },
   {
     name: "Aisha R.",
@@ -27,7 +27,7 @@ const testimonials = [
   {
     name: "Jake M.",
     role: "Designer",
-    text: "I describe the app, Vibecode builds it, and I tweak the design by chatting. No more waiting on devs.",
+    text: "I describe the app, NovaCode builds it, and I tweak the design by chatting. No more waiting on devs.",
   },
 ];
 

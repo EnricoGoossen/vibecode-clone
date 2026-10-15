@@ -62,11 +62,11 @@ const templates = [
 const faqs = [
   {
     q: "What is an app template?",
-    a: "A working app you start from instead of a blank screen. Each Vibecode template is a native iPhone app written in Swift with SwiftUI that recreates the core screens of a popular app under its own name, running on sample data.",
+    a: "A working app you start from instead of a blank screen. Each NovaCode template is a native iPhone app written in Swift with SwiftUI that recreates the core screens of a popular app under its own name, running on sample data.",
   },
   {
     q: "Are the templates free?",
-    a: "Remixing a template is free with a Vibecode account and gives you your own copy of the Swift project. Changes you ask the agent for use credits. Publishing to the App Store needs the Plus plan or higher and an Apple Developer account ($99/year).",
+    a: "Remixing a template is free with a NovaCode account and gives you your own copy of the Swift project. Changes you ask the agent for use credits. Publishing to the App Store needs the Plus plan or higher and an Apple Developer account ($99/year).",
   },
   {
     q: "Can I publish a template to the App Store?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Do the templates run on Android?",
-    a: "No. They are native iPhone apps in Swift. For Android, start a Mobile app project in Vibecode, which builds React Native apps for iPhone and Android, and paste a template's prompt.",
+    a: "No. They are native iPhone apps in Swift. For Android, start a Mobile app project in NovaCode, which builds React Native apps for iPhone and Android, and paste a template's prompt.",
   },
 ];
 
@@ -201,7 +201,7 @@ export default function TemplatesPage() {
         </h2>
         <ul className="space-y-3">
           {[
-            "A native iPhone app in Swift and SwiftUI that runs in Vibecode's cloud iOS simulator, in your browser.",
+            "A native iPhone app in Swift and SwiftUI that runs in NovaCode's cloud iOS simulator, in your browser.",
             "Its own name, logo and colors, with none of the original app's trademarks.",
             "Realistic sample data with no login or backend, so every screen works right away.",
             "The exact prompt that built it, so you can rebuild it or change the brief.",

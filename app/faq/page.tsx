@@ -8,12 +8,12 @@ const faqs = [
     cat: "Getting started",
     items: [
       {
-        q: "What is Vibecode?",
-        a: "Vibecode is an AI app builder. You describe what you want in plain language, and Vibecode writes the code, builds the app, and gets it ready to ship — as a web app or a native mobile app.",
+        q: "What is NovaCode?",
+        a: "NovaCode is an AI app builder. You describe what you want in plain language, and NovaCode writes the code, builds the app, and gets it ready to ship — as a web app or a native mobile app.",
       },
       {
         q: "Do I need to know how to code?",
-        a: "No. You describe what you want and Vibecode handles the code. But if you do know how to code, you can also edit the source directly, connect your own database, and SSH into the project.",
+        a: "No. You describe what you want and NovaCode handles the code. But if you do know how to code, you can also edit the source directly, connect your own database, and SSH into the project.",
       },
       {
         q: "What can I build?",
@@ -21,7 +21,7 @@ const faqs = [
       },
       {
         q: "How does it work?",
-        a: "You type a prompt describing your app. Vibecode's AI agent writes the code, sets up the project, and gives you a live preview. You can keep chatting to make changes, add features, or fix bugs.",
+        a: "You type a prompt describing your app. NovaCode's AI agent writes the code, sets up the project, and gives you a live preview. You can keep chatting to make changes, add features, or fix bugs.",
       },
     ],
   },
@@ -47,15 +47,15 @@ const faqs = [
     items: [
       {
         q: "Can I publish to the App Store?",
-        a: "Yes. Vibecode builds, signs, and uploads your app to the App Store. You need an Apple Developer account ($99/year). No Mac or Xcode required.",
+        a: "Yes. NovaCode builds, signs, and uploads your app to the App Store. You need an Apple Developer account ($99/year). No Mac or Xcode required.",
       },
       {
         q: "Can I publish to Google Play?",
-        a: "Yes. Vibecode generates React Native apps for Android that you can submit to Google Play.",
+        a: "Yes. NovaCode generates React Native apps for Android that you can submit to Google Play.",
       },
       {
         q: "Can I download the source code?",
-        a: "Yes. All paid plans include source code download. You own the code Vibecode generates for you.",
+        a: "Yes. All paid plans include source code download. You own the code NovaCode generates for you.",
       },
     ],
   },
@@ -63,7 +63,7 @@ const faqs = [
     cat: "Technical",
     items: [
       {
-        q: "What technologies does Vibecode use?",
+        q: "What technologies does NovaCode use?",
         a: "Web apps are built with modern web frameworks. iOS apps are native Swift and SwiftUI. Android apps use React Native. You can also connect your own database and authentication.",
       },
       {
@@ -72,7 +72,7 @@ const faqs = [
       },
       {
         q: "Is there a CLI?",
-        a: "Yes. Vibecode has a command-line interface for building and managing projects from your terminal. See the CLI docs for setup instructions.",
+        a: "Yes. NovaCode has a command-line interface for building and managing projects from your terminal. See the CLI docs for setup instructions.",
       },
     ],
   },
@@ -88,7 +88,7 @@ export default function FaqPage() {
           Frequently asked questions
         </h1>
         <p className="text-[#a3a3a3]">
-          Everything you need to know about Vibecode.
+          Everything you need to know about NovaCode.
         </p>
       </section>
 

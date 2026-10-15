@@ -149,7 +149,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#1c1c20] text-neutral-300 border border-[#28282c] hover:border-[#38383c] transition-colors">
-                  <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+                  <Sparkles className="w-3.5 h-3.5 text-violet-400" />
                   Opus 5.5 (Med)
                   <ChevronDown className="w-3 h-3 text-neutral-500" />
                 </button>
@@ -196,13 +196,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Built on Vibecode */}
+      {/* Built on NovaCode */}
       <section className="relative px-6 py-20 mt-16 max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
-          Built on Vibecode
+          Built on NovaCode
         </h2>
         <p className="text-neutral-400 text-[15px] mb-14 max-w-lg mx-auto">
-          Websites, games and iPhone apps made with Vibecode. Each one started as a prompt.
+          Websites, games and iPhone apps made with NovaCode. Each one started as a prompt.
         </p>
 
         {/* Web apps */}
@@ -280,7 +280,7 @@ export default function Home() {
             </h2>
             <p className="text-neutral-400 mb-2">Create websites and apps in seconds with AI</p>
             <p className="text-sm text-neutral-500 mb-8 max-w-sm">
-              The Vibecode app has been on the App Store since June 2025, and Vibecode builds
+              The NovaCode app has been on the App Store since June 2025, and NovaCode builds
               native Swift iPhone apps you can publish there too.{" "}
               <a href="#" className="text-white underline underline-offset-2">
                 App Store status
@@ -361,7 +361,7 @@ export default function Home() {
           Create websites and apps in seconds with AI
         </h2>
         <p className="text-neutral-400">
-          The Vibecode app has been on the App Store since June 2025, and Vibecode builds native
+          The NovaCode app has been on the App Store since June 2025, and NovaCode builds native
           Swift iPhone apps you can publish there too.{" "}
           <a href="#" className="text-white underline underline-offset-2">
             App Store status

@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const menuLinks = [
-  { label: "Vibecode", href: "/" },
+  { label: "NovaCode", href: "/" },
   { label: "Get the mobile app", href: "#" },
   { label: "Blog", href: "/blog" },
   { label: "Compare", href: "/pricing" },
@@ -29,7 +29,7 @@ const menuLinks = [
   { label: "Docs", href: "/docs" },
   { label: "App Store status", href: "#" },
   { label: "Support", href: "#" },
-  { label: "Vibecode Reviews", href: "#" },
+  { label: "NovaCode Reviews", href: "#" },
   { label: "Pricing", href: "/pricing" },
   { label: "Integrations", href: "#" },
   { label: "Templates", href: "/templates" },
@@ -52,13 +52,13 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-[#ff8a3d] to-[#e85d04] flex items-center justify-center">
+          <span className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-[#8b7cf6] to-[#5b4fe8] flex items-center justify-center">
             <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7L7 2L12 7L7 12L2 7Z" fill="white" />
+              <path d="M7 1L8.3 5.7L13 7L8.3 8.3L7 13L5.7 8.3L1 7L5.7 5.7Z" fill="white" />
             </svg>
           </span>
           <span className="text-[16px] font-semibold tracking-tight text-[#fafafa]">
-            Vibecode
+            NovaCode
           </span>
         </Link>
 

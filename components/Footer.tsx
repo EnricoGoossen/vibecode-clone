@@ -3,7 +3,7 @@ import { Smartphone, Sun, Moon, Monitor } from "lucide-react";
 
 const columns = [
   {
-    title: "Vibecode",
+    title: "NovaCode",
     links: [
       { label: "Blog", href: "/blog" },
       { label: "Compare", href: "/pricing" },
@@ -27,7 +27,7 @@ const columns = [
       { label: "Docs", href: "/docs" },
       { label: "App Store status", href: "#" },
       { label: "Support", href: "#" },
-      { label: "Vibecode Reviews", href: "#" },
+      { label: "NovaCode Reviews", href: "#" },
     ],
   },
   {
@@ -59,13 +59,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <span className="w-6 h-6 rounded-[6px] bg-gradient-to-br from-[#ff8a3d] to-[#e85d04] flex items-center justify-center">
+              <span className="w-6 h-6 rounded-[6px] bg-gradient-to-br from-[#8b7cf6] to-[#5b4fe8] flex items-center justify-center">
                 <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7L7 2L12 7L7 12L2 7Z" fill="white" />
+                  <path d="M7 1L8.3 5.7L13 7L8.3 8.3L7 13L5.7 8.3L1 7L5.7 5.7Z" fill="white" />
                 </svg>
               </span>
               <span className="text-[15px] font-semibold tracking-tight text-[#fafafa]">
-                Vibecode
+                NovaCode
               </span>
             </Link>
             <Link
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4 order-1 md:order-2">
             <p className="text-[12px] text-[#777]">
-              All rights reserved &bull; &copy; 2026 Not A Number Labs Incorporated
+              All rights reserved &bull; &copy; 2026 NovaCode
             </p>
             <div className="flex items-center gap-1 border border-[#2a2a2a] rounded-full p-1">
               <button aria-label="Light" className="p-1.5 rounded-full text-[#666] hover:text-[#fafafa] transition-colors">
