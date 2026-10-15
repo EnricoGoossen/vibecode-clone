@@ -37,6 +37,12 @@ const PROVIDERS = [
     desc: "Mistral-modellen via je eigen Mistral-account.",
     href: "https://console.mistral.ai/api-keys",
   },
+  {
+    id: "ollama",
+    name: "Ollama Cloud",
+    desc: "Open-source modellen (Kimi, Llama, Qwen e.a.) via je eigen Ollama Cloud-account.",
+    href: "https://ollama.com/settings/keys",
+  },
 ];
 
 type StoredKey = { id: string; provider: string; label: string | null; created_at: string };
