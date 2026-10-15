@@ -35,35 +35,47 @@ export default function ChatPanel({ onSend, isGenerating, hasApp }: ChatPanelPro
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, steps]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim() || isGenerating) return;
     const msg = input.trim();
     setInput("");
     setMessages((prev) => [...prev, { role: "user", content: msg, timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) }]);
 
-    // Simulate agent steps
-    const agentSteps = [
-      "Analyzing your request...",
-      "Designing the layout...",
-      "Writing the code...",
-      "Adding interactivity...",
-      "Finalizing...",
-    ];
-    setSteps(agentSteps);
+    setSteps(["Vraag versturen naar Ollama Cloud..."]);
     setCurrentStep(0);
 
-    let step = 0;
-    const interval = setInterval(() => {
-      step++;
-      setCurrentStep(step);
-      if (step >= agentSteps.length) {
-        clearInterval(interval);
-        setMessages((prev) => [...prev, { role: "agent", content: "Done! Your app is ready in the preview.", timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) }]);
-        setSteps([]);
-        setCurrentStep(0);
-        onSend(msg);
+    try {
+      const res = await fetch("/api/ollama", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt: msg }),
+      });
+      const data = await res.json();
+
+      setSteps([]);
+      setCurrentStep(0);
+
+      if (!res.ok) {
+        setMessages((prev) => [
+          ...prev,
+          { role: "agent", content: `⚠️ ${data.error}`, timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) },
+        ]);
+        return;
       }
-    }, 600);
+
+      setMessages((prev) => [
+        ...prev,
+        { role: "agent", content: data.reply, timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) },
+      ]);
+      onSend(msg);
+    } catch {
+      setSteps([]);
+      setCurrentStep(0);
+      setMessages((prev) => [
+        ...prev,
+        { role: "agent", content: "⚠️ Kon geen verbinding maken met de server.", timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) },
+      ]);
+    }
   };
 
   return (
