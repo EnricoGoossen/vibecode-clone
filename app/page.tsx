@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ChevronDown,
@@ -103,8 +104,15 @@ function PhoneCard({ app }: { app: (typeof mobileApps)[number] }) {
 }
 
 export default function Home() {
+  const router = useRouter();
   const [tab, setTab] = useState<"web" | "mobile">("web");
   const [activeWeb, setActiveWeb] = useState(0);
+  const [prompt, setPrompt] = useState("");
+
+  const goBuild = () => {
+    const q = prompt.trim();
+    router.push(q ? `/build?prompt=${encodeURIComponent(q)}` : "/build");
+  };
 
   return (
     <div className="relative bg-[#0a0a0a] text-white overflow-hidden">
@@ -126,6 +134,14 @@ export default function Home() {
         <div className="w-full max-w-2xl mx-auto">
           <div className="bg-[#131316] border border-[#232327] rounded-[22px] p-4 text-left">
             <textarea
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  goBuild();
+                }
+              }}
               placeholder="What do you want to create?"
               rows={2}
               className="w-full bg-transparent border-0 resize-none text-[15px] text-white placeholder-neutral-500 focus:outline-none mb-3"
@@ -146,12 +162,21 @@ export default function Home() {
                   <ChevronDown className="w-3 h-3 text-neutral-500" />
                 </button>
               </div>
-              <button
-                aria-label="Voice input"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 hover:text-white hover:bg-[#1c1c20] transition-colors"
-              >
-                <Mic className="w-4 h-4" />
-              </button>
+              <div className="flex items-center gap-1">
+                <button
+                  aria-label="Voice input"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-neutral-400 hover:text-white hover:bg-[#1c1c20] transition-colors"
+                >
+                  <Mic className="w-4 h-4" />
+                </button>
+                <button
+                  aria-label="Generate"
+                  onClick={goBuild}
+                  className="w-8 h-8 rounded-full flex items-center justify-center bg-white text-black hover:bg-neutral-200 transition-colors"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -160,6 +185,7 @@ export default function Home() {
             {suggestions.map(({ label, icon: Icon }) => (
               <button
                 key={label}
+                onClick={() => setPrompt(label)}
                 className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs text-neutral-300 bg-[#131316] border border-[#232327] hover:border-[#38383c] transition-colors"
               >
                 <Icon className="w-3.5 h-3.5 text-neutral-500" />
@@ -350,13 +376,13 @@ export default function Home() {
           <br />
           creators, problem-solvers.
         </h2>
-        <a
-          href="#"
+        <button
+          onClick={goBuild}
           className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-black font-medium rounded-full text-sm hover:bg-neutral-200 transition-colors"
         >
           Get started
           <ArrowUpRight className="w-4 h-4" />
-        </a>
+        </button>
       </section>
     </div>
   );

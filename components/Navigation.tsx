@@ -78,13 +78,13 @@ export default function Navigation() {
         {/* Right side */}
         <div className="flex items-center gap-2 shrink-0">
           <Link
-            href="/sign-in"
+            href="/build"
             className="inline-flex items-center text-[13px] font-medium text-[#fafafa] border border-[#2a2a2a] hover:border-[#3a3a3a] transition-colors px-4 py-[7px] rounded-full"
           >
             Log in
           </Link>
           <Link
-            href="/get-started"
+            href="/build"
             className="hidden sm:inline-flex items-center text-[13px] font-medium text-black bg-white hover:bg-neutral-200 transition-colors px-4 py-[7px] rounded-full"
           >
             Get started

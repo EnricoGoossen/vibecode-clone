@@ -5,80 +5,127 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "What is Vibecode?",
-    a: "Vibecode is an AI-powered app builder that lets you create mobile and web apps by describing what you want in natural language. No coding required — just describe your app and our AI agent builds it for you.",
+    cat: "Getting started",
+    items: [
+      {
+        q: "What is Vibecode?",
+        a: "Vibecode is an AI app builder. You describe what you want in plain language, and Vibecode writes the code, builds the app, and gets it ready to ship — as a web app or a native mobile app.",
+      },
+      {
+        q: "Do I need to know how to code?",
+        a: "No. You describe what you want and Vibecode handles the code. But if you do know how to code, you can also edit the source directly, connect your own database, and SSH into the project.",
+      },
+      {
+        q: "What can I build?",
+        a: "Websites, web apps, and native mobile apps for iOS and Android. From landing pages to full SaaS products, from utility apps to games.",
+      },
+      {
+        q: "How does it work?",
+        a: "You type a prompt describing your app. Vibecode's AI agent writes the code, sets up the project, and gives you a live preview. You can keep chatting to make changes, add features, or fix bugs.",
+      },
+    ],
   },
   {
-    q: "How does it work?",
-    a: "You describe your app in the chat panel. Our AI agent interprets your description, generates the code, and shows you a live preview. You can iterate by sending follow-up messages to refine the app.",
+    cat: "Pricing",
+    items: [
+      {
+        q: "How much does it cost?",
+        a: "Plans start at $20/month (Plus), $50/month (Pro), and $200/month (Max). Annual billing gets you 2 months free. $1 in credits = $1 in AI usage — we charge exactly what we pay.",
+      },
+      {
+        q: "Is there a free tier?",
+        a: "You can start building for free with limited credits. To publish to the App Store or access premium models, you need a paid plan.",
+      },
+      {
+        q: "Do credits roll over?",
+        a: "Yes. Credits roll over each billing cycle while your plan is active.",
+      },
+    ],
   },
   {
-    q: "Can I build native iOS and Android apps?",
-    a: "Yes. Vibecode builds native iOS apps using Swift + SwiftUI on cloud Macs, and Android apps using Kotlin. You can also build web apps with React. All from the same prompt.",
+    cat: "Publishing",
+    items: [
+      {
+        q: "Can I publish to the App Store?",
+        a: "Yes. Vibecode builds, signs, and uploads your app to the App Store. You need an Apple Developer account ($99/year). No Mac or Xcode required.",
+      },
+      {
+        q: "Can I publish to Google Play?",
+        a: "Yes. Vibecode generates React Native apps for Android that you can submit to Google Play.",
+      },
+      {
+        q: "Can I download the source code?",
+        a: "Yes. All paid plans include source code download. You own the code Vibecode generates for you.",
+      },
+    ],
   },
   {
-    q: "What happens to my code?",
-    a: "Your code is yours. You can export it at any time, download the full source, or get SSH access to the build environment. There's no lock-in.",
-  },
-  {
-    q: "How do credits work?",
-    a: "Each build action consumes credits. The Free plan includes 100 credits/month, Pro includes 1,000, and Team includes 5,000. Credits reset monthly and don't roll over.",
-  },
-  {
-    q: "Can I deploy to the App Store?",
-    a: "Yes. With a Pro or Team plan, you can submit your app directly to the Apple App Store or Google Play Store. We handle the build, signing, and submission process.",
-  },
-  {
-    q: "What AI integrations are available?",
-    a: "Vibecode supports GPT, Gemini, image generation, maps, weather, and more. You can add AI-powered features to your app with a single prompt.",
-  },
-  {
-    q: "Is there a free plan?",
-    a: "Yes. The Free plan gives you 100 credits per month, web app builds, community support, and the ability to share your app via link. No credit card required.",
+    cat: "Technical",
+    items: [
+      {
+        q: "What technologies does Vibecode use?",
+        a: "Web apps are built with modern web frameworks. iOS apps are native Swift and SwiftUI. Android apps use React Native. You can also connect your own database and authentication.",
+      },
+      {
+        q: "Can I connect my own database?",
+        a: "Yes. All paid plans include database and authentication connectivity for each project.",
+      },
+      {
+        q: "Is there a CLI?",
+        a: "Yes. Vibecode has a command-line interface for building and managing projects from your terminal. See the CLI docs for setup instructions.",
+      },
+    ],
   },
 ];
 
 export default function FaqPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-20">
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-[48px] font-semibold tracking-[-1.2px] text-[#fafafa] mb-4">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-[16px] text-[#a3a3a3]">
-            Everything you need to know about Vibecode.
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#0a0a0a] text-[#fafafa]">
+      <section className="px-6 pt-16 pb-8 max-w-3xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
+          Frequently asked questions
+        </h1>
+        <p className="text-[#a3a3a3]">
+          Everything you need to know about Vibecode.
+        </p>
+      </section>
 
-        {/* FAQ items */}
-        <div className="max-w-3xl mx-auto">
-          {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-[#1a1a1a]">
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-center justify-between py-5 text-left"
-              >
-                <span className="text-[15px] font-medium text-[#fafafa] pr-4">{faq.q}</span>
-                <ChevronDown
-                  size={18}
-                  className={`text-[#555] shrink-0 transition-transform duration-200 ${
-                    openIndex === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {openIndex === i && (
-                <div className="pb-5">
-                  <p className="text-[14px] text-[#a3a3a3] leading-relaxed">{faq.a}</p>
-                </div>
-              )}
+      <section className="px-6 py-8 max-w-3xl mx-auto">
+        {faqs.map((cat) => (
+          <div key={cat.cat} className="mb-10">
+            <h2 className="text-[13px] font-semibold uppercase tracking-wider text-[#555] mb-4">
+              {cat.cat}
+            </h2>
+            <div className="space-y-1">
+              {cat.items.map((item) => {
+                const isOpen = open === item.q;
+                return (
+                  <div key={item.q} className="border-b border-[#1e1e1e]">
+                    <button
+                      onClick={() => setOpen(isOpen ? null : item.q)}
+                      className="w-full flex items-center justify-between py-4 text-left"
+                    >
+                      <span className="text-[15px] font-medium pr-4">{item.q}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 text-[#555] shrink-0 transition-transform ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {isOpen && (
+                      <p className="pb-4 text-[14px] text-[#a3a3a3] leading-relaxed">
+                        {item.a}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }

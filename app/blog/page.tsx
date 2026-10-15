@@ -1,80 +1,92 @@
+"use client";
+
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const posts = [
   {
-    title: "What is Vibe Coding? A Complete Guide",
-    excerpt: "Vibe coding is the practice of building software by describing what you want in natural language, letting an AI agent handle the implementation.",
-    date: "Oct 10, 2026",
-    readTime: "8 min read",
+    title: "How to build an Instagram clone",
+    excerpt: "A step-by-step guide to recreating the core screens of Instagram as a native iPhone app in Swift.",
+    date: "Oct 2026",
+    tag: "Guide",
+    theme: "from-pink-400 to-purple-500",
   },
   {
-    title: "Building Native iOS Apps with AI: What Changed in 2026",
-    excerpt: "Cloud Macs, Swift + SwiftUI generation, and one-click App Store submission. The iOS app building landscape has shifted dramatically.",
-    date: "Oct 5, 2026",
-    readTime: "6 min read",
+    title: "How to build an Uber clone",
+    excerpt: "Maps, ride matching, live trip tracking — how to build a ride-hailing app from scratch with AI.",
+    date: "Sep 2026",
+    tag: "Guide",
+    theme: "from-gray-600 to-black",
   },
   {
-    title: "From Prompt to Production: Our Build Pipeline Explained",
-    excerpt: "A deep dive into how Vibecode takes your description and turns it into a working, deployable application in minutes.",
-    date: "Sep 28, 2026",
-    readTime: "10 min read",
+    title: "Best AI mobile app builders in 2026",
+    excerpt: "We compared the top AI app builders on features, pricing, and output quality. Here's what we found.",
+    date: "Sep 2026",
+    tag: "Comparison",
+    theme: "from-blue-400 to-indigo-600",
   },
   {
-    title: "5 Apps Our Community Built This Month",
-    excerpt: "From a budget tracker to a full e-commerce store — see what the Vibecode community is shipping.",
-    date: "Sep 20, 2026",
-    readTime: "5 min read",
+    title: "What is vibe coding?",
+    excerpt: "The new way of building software by describing what you want instead of writing code. A deep dive.",
+    date: "Aug 2026",
+    tag: "Concept",
+    theme: "from-emerald-400 to-teal-600",
   },
   {
-    title: "React Native vs Native: Choosing the Right Stack",
-    excerpt: "Not every app needs the same approach. Here's how to decide between cross-platform and native for your project.",
-    date: "Sep 12, 2026",
-    readTime: "7 min read",
+    title: "Publishing to the App Store without a Mac",
+    excerpt: "How Vibecode builds, signs, and uploads your iOS app to the App Store — no Xcode required.",
+    date: "Aug 2026",
+    tag: "Tutorial",
+    theme: "from-slate-400 to-blue-500",
   },
   {
-    title: "Monetizing Your AI-Built App: Strategies That Work",
-    excerpt: "In-app purchases, subscriptions, ads — how to make your Vibecode-built app earn revenue from day one.",
-    date: "Sep 5, 2026",
-    readTime: "9 min read",
+    title: "From prompt to production: a case study",
+    excerpt: "How a solo founder went from an idea to a live SaaS product in 3 weeks using Vibecode.",
+    date: "Jul 2026",
+    tag: "Case study",
+    theme: "from-amber-400 to-orange-500",
   },
 ];
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] pt-20">
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-[48px] font-semibold tracking-[-1.2px] text-[#fafafa] mb-4">
-            Blog
-          </h1>
-          <p className="text-[16px] text-[#a3a3a3] max-w-2xl">
-            Insights, guides, and updates from the Vibecode team.
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#0a0a0a] text-[#fafafa]">
+      <section className="px-6 pt-16 pb-8 max-w-5xl mx-auto">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Blog</h1>
+        <p className="text-[#a3a3a3]">
+          Guides, comparisons, and stories from the Vibecode community.
+        </p>
+      </section>
 
-        {/* Posts */}
-        <div className="space-y-4">
+      <section className="px-6 py-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {posts.map((post) => (
             <Link
               key={post.title}
               href="#"
-              className="block rounded-lg border border-[#1a1a1a] bg-[rgba(250,250,250,0.03)] p-6 hover:border-[rgba(250,250,250,0.2)] transition-colors"
+              className="group rounded-2xl border border-[#1e1e1e] bg-[#111113] overflow-hidden hover:border-[#333] transition-colors"
             >
-              <h3 className="text-[18px] font-medium text-[#fafafa] mb-2">
-                {post.title}
-              </h3>
-              <p className="text-[14px] text-[#a3a3a3] leading-relaxed mb-4">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center gap-4">
-                <span className="text-[12px] text-[#555]">{post.date}</span>
-                <span className="text-[12px] text-[#555]">{post.readTime}</span>
+              <div className={`aspect-[16/9] bg-gradient-to-br ${post.theme} relative`}>
+                <div className="absolute inset-0 bg-black/20" />
+              </div>
+              <div className="p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[11px] px-2 py-0.5 rounded-full bg-[#1a1a1a] text-[#737373] border border-[#242424]">
+                    {post.tag}
+                  </span>
+                  <span className="text-[11px] text-[#555]">{post.date}</span>
+                </div>
+                <h2 className="text-[15px] font-medium mb-1.5 group-hover:text-white transition-colors">
+                  {post.title}
+                </h2>
+                <p className="text-[13px] text-[#737373] leading-relaxed line-clamp-2">
+                  {post.excerpt}
+                </p>
               </div>
             </Link>
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }
